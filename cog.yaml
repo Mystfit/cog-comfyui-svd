@@ -22,7 +22,12 @@ build:
     - scipy
     - tqdm
     - psutil
+    - requests
     - websocket-client==1.6.3
+    - pyequilib
+    - opencv-python
+    - imageio-ffmpeg
+
 
 
 # predict.py defines how predictions are run on your model

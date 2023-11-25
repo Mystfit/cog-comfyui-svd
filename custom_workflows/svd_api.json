@@ -1,0 +1,119 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 1028453723967000,
+      "steps": 20,
+      "cfg": 2.5,
+      "sampler_name": "euler",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "14",
+        0
+      ],
+      "positive": [
+        "12",
+        0
+      ],
+      "negative": [
+        "12",
+        1
+      ],
+      "latent_image": [
+        "12",
+        2
+      ]
+    },
+    "class_type": "KSampler"
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "15",
+        2
+      ]
+    },
+    "class_type": "VAEDecode"
+  },
+  "10": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "fps": 10,
+      "lossless": true,
+      "quality": 100,
+      "method": "default"
+    },
+    "class_type": "SaveAnimatedWEBP"
+  },
+  "12": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "video_frames": 25,
+      "motion_bucket_id": 127,
+      "fps": 6,
+      "augmentation_level": 0,
+      "clip_vision": [
+        "15",
+        1
+      ],
+      "init_image": [
+        "23",
+        0
+      ],
+      "vae": [
+        "15",
+        2
+      ]
+    },
+    "class_type": "SVD_img2vid_Conditioning"
+  },
+  "14": {
+    "inputs": {
+      "min_cfg": 1,
+      "model": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "VideoLinearCFGGuidance"
+  },
+  "15": {
+    "inputs": {
+      "ckpt_name": "svd_xt.safetensors"
+    },
+    "class_type": "ImageOnlyCheckpointLoader"
+  },
+  "23": {
+    "inputs": {
+      "image": "Plane2.PNG",
+      "choose file to upload": "image"
+    },
+    "class_type": "LoadImage"
+  },
+  "26": {
+    "inputs": {
+      "frame_rate": 6,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/webm",
+      "pingpong": false,
+      "save_image": true,
+      "crf": 20,
+      "save_metadata": true,
+      "videopreview": {
+        "hidden": false,
+        "paused": false
+      },
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine"
+  }
+}
